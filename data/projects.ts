@@ -106,6 +106,7 @@ export const projects: Project[] = [
     longDescription:
       "This Reddit clone recreates the complete Reddit post page experience with all interactive elements. Users can view posts with rich media content, engage through upvoting and downvoting, add nested comments with real-time updates, and sort discussions by different criteria. The application features sophisticated UI patterns including hover-triggered profile cards, animated vote buttons, collapsible comment threads, and responsive design that works seamlessly across all device sizes.",
     image: "/imgs/project2.png",
+    images: ["/imgs/project2/1.png"],
     tags: ["React", "SASS", "JavaScript"],
     category: "Frontend",
     year: "2023",
