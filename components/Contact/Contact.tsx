@@ -12,7 +12,11 @@ function Contact() {
       href: "https://www.linkedin.com/in/hussein-medhat-99132875/",
       label: "LinkedIn",
     },
-    { icon: FileText, href: "/cv.pdf", label: "CV" },
+    {
+      icon: FileText,
+      href: "https://drive.google.com/file/d/1WkqxssXMKJzlQKmfh86ztQNE1IjGfdDp/view?usp=sharing",
+      label: "CV",
+    },
   ];
 
   return (

@@ -13,7 +13,12 @@ interface ImageModalProps {
   alt: string;
 }
 
-export default function ImageModal({ isOpen, onClose, src, alt }: ImageModalProps) {
+export default function ImageModal({
+  isOpen,
+  onClose,
+  src,
+  alt,
+}: ImageModalProps) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -64,7 +69,7 @@ export default function ImageModal({ isOpen, onClose, src, alt }: ImageModalProp
             <button className={styles.closeButton} onClick={onClose}>
               <X size={24} />
             </button>
-            
+
             <div className={styles.imageContainer}>
               <Image
                 src={src}

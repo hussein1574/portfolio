@@ -27,7 +27,10 @@ interface ProjectPageProps {
 export default function ProjectPage({ params }: ProjectPageProps) {
   const resolvedParams = use(params);
   const project = getProjectById(parseInt(resolvedParams.id));
-  const [modalImage, setModalImage] = useState<{ src: string; alt: string } | null>(null);
+  const [modalImage, setModalImage] = useState<{
+    src: string;
+    alt: string;
+  } | null>(null);
 
   if (!project) {
     notFound();
@@ -156,7 +159,12 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                     height={300}
                     sizes="(max-width: 767px) 45vw, (max-width: 1199px) 30vw, 25vw"
                     className={styles.thumbnailImage}
-                    onClick={() => openModal(image, `${project.title} - Screenshot ${index + 1}`)}
+                    onClick={() =>
+                      openModal(
+                        image,
+                        `${project.title} - Screenshot ${index + 1}`
+                      )
+                    }
                     style={{ cursor: "pointer" }}
                   />
                 </div>
