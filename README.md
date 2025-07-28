@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Modern Portfolio Website
 
-## Getting Started
+A beautiful, responsive portfolio website built with Next.js 14, TypeScript, and SCSS with smooth animations powered by Framer Motion.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Modern Design**: Clean, professional design with glassmorphism effects
+- **Smooth Animations**: Powered by Framer Motion for engaging user experience
+- **Responsive Layout**: Mobile-first approach ensuring great experience across all devices
+- **Custom Scrollbar**: Branded scrollbar that matches the design theme
+- **Project Showcase**: Dedicated pages for individual project details
+- **Performance Optimized**: Built with Next.js for optimal performance and SEO
+- **TypeScript**: Full type safety throughout the application
+- **SCSS Modules**: Component-scoped styling for maintainable CSS
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Frontend
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 14+** - React framework with App Router
+- **TypeScript** - Type safety and better developer experience
+- **SCSS Modules** - Component-scoped styling
+- **Framer Motion** - Smooth animations and transitions
+- **Lucide React** - Beautiful, customizable icons
 
-## Learn More
+## 🚀 Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js 18+
+- npm or yarn
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Installation
 
-## Deploy on Vercel
+1. **Clone the repository**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   git clone [your-repo-url]
+   cd portfolio
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:3000`
+
+## 📝 Customization
+
+### Personal Information
+
+Update the personal information in:
+
+- `components/Hero/Hero.tsx` - Name, title, and description
+- `components/Contact/Contact.tsx` - Contact information and social links
+- `components/WorkExperience/WorkExperience.tsx` - Work history
+- `components/Skills/Skills.tsx` - Skills and technologies
+
+### Projects Data
+
+Update project information in:
+
+- `components/ProjectsShowcase/ProjectsShowcase.tsx` - Projects listing
+- `app/projects/[id]/page.tsx` - Individual project details
+
+Built with ❤️ using Next.js, TypeScript, and Framer Motion

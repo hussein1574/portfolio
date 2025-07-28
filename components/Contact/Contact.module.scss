@@ -1,0 +1,200 @@
+.contact {
+  padding: 6rem 0 4rem;
+  background: linear-gradient(
+    180deg,
+    var(--background-primary-color) 0%,
+    rgba(113, 39, 186, 0.1) 100%
+  );
+  position: relative;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header {
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #fff, var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.contactContent {
+  margin-bottom: 4rem;
+}
+
+.contactText {
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.emailButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    rgba(113, 39, 186, 0.8)
+  );
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(113, 39, 186, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(113, 39, 186, 0.4);
+    background: linear-gradient(
+      135deg,
+      rgba(113, 39, 186, 0.9),
+      var(--secondary-color)
+    );
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+  }
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+
+  @media (max-width: 768px) {
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.socialLink {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 25px rgba(113, 39, 186, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.logoContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.logoSvg {
+  width: 80px;
+  height: 90px;
+  filter: drop-shadow(0 0 20px rgba(113, 39, 186, 0.5));
+  animation: logoFloat 6s ease-in-out infinite;
+
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 70px;
+  }
+}
+
+.logoGlow {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(
+    circle,
+    rgba(113, 39, 186, 0.3) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: logoGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes logoGlow {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}

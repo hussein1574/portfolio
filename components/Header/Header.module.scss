@@ -1,0 +1,84 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(17, 7, 31, 0.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  height: 80px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 768px) {
+    padding: 1rem 2rem;
+    height: 70px;
+  }
+}
+
+.logo {
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  svg {
+    filter: drop-shadow(0 0 10px rgba(113, 39, 186, 0.5));
+  }
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 768px) {
+    gap: 1.5rem;
+  }
+}
+
+.navItem {
+  position: relative;
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--secondary-color), transparent);
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: var(--secondary-color);
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+}

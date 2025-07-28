@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Preahvihear } from "next/font/google";
+import "../styles/globals.scss";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const preahvihear = Preahvihear({
+  weight: "400", // Specify the desired weights if available (Preahvihear often has only one weight)
+  subsets: ["latin"], // Include necessary subsets
+  display: "swap", // Recommended for better performance
 });
 
 export const metadata: Metadata = {
@@ -24,9 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
-      </body>
+      <body className={`${preahvihear}`}>{children}</body>
     </html>
   );
 }
