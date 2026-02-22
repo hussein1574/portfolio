@@ -27,7 +27,7 @@ body {
   font-family: "Preahvihear";
 
   @media (max-width: 768px) {
-    padding-top: 70px;
+    padding-top: 64px;
   }
 }
 
@@ -68,6 +68,12 @@ html {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(113, 39, 186, 0.4);
+  color: #fff;
 }
 
 /* Typography */

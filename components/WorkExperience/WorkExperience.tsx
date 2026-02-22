@@ -57,6 +57,7 @@ const workExperience = [
     icon: UtensilsCrossed,
   },
 ];
+
 function WorkExperience() {
   return (
     <section className={styles.workExperience}>
@@ -68,49 +69,56 @@ function WorkExperience() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
+          <span className={styles.sectionLabel}>Career Path</span>
           <h2>Work Experience</h2>
         </motion.div>
 
-        <div className={styles.experienceGrid}>
+        <div className={styles.timeline}>
+          <div className={styles.timelineLine} />
           {workExperience.map((experience, index) => (
             <motion.div
               key={experience.id}
-              className={styles.experienceCard}
-              initial={{ opacity: 0, y: 50 }}
+              className={`${styles.timelineItem} ${index % 2 === 1 ? styles.right : ""}`}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.2 },
-              }}
-              viewport={{ once: true }}
-              style={
-                { "--card-color": experience.color } as React.CSSProperties
-              }
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              viewport={{ once: true, margin: "-50px" }}
             >
-              <div className={styles.cardHeader}>
-                <div className={styles.icon}>
-                  <experience.icon size={24} />
-                </div>
-                <div className={styles.cardInfo}>
-                  <h3>{experience.title}</h3>
-                  <div className={styles.companyInfo}>
-                    <span className={styles.company}>{experience.company}</span>
-                    <div className={styles.details}>
-                      <span className={styles.location}>
-                        <MapPin size={14} />
-                        {experience.location}
-                      </span>
-                      <span className={styles.period}>
-                        <Calendar size={14} />
-                        {experience.period}
-                      </span>
-                    </div>
+              <div
+                className={styles.timelineDot}
+                style={{ background: experience.color }}
+              />
+              <motion.div
+                className={styles.experienceCard}
+                whileHover={{
+                  y: -4,
+                  transition: { duration: 0.2 },
+                }}
+                style={
+                  { "--card-color": experience.color } as React.CSSProperties
+                }
+              >
+                <div className={styles.cardTop}>
+                  <div className={styles.icon}>
+                    <experience.icon size={20} />
                   </div>
+                  <span className={styles.period}>
+                    <Calendar size={13} />
+                    {experience.period}
+                  </span>
                 </div>
-              </div>
-              <p className={styles.description}>{experience.description}</p>
-              <div className={styles.cardGlow}></div>
+
+                <h3>{experience.title}</h3>
+                <div className={styles.companyRow}>
+                  <span className={styles.company}>{experience.company}</span>
+                  <span className={styles.divider}>|</span>
+                  <span className={styles.location}>
+                    <MapPin size={13} />
+                    {experience.location}
+                  </span>
+                </div>
+                <p className={styles.description}>{experience.description}</p>
+              </motion.div>
             </motion.div>
           ))}
         </div>

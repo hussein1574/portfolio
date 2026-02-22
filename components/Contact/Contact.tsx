@@ -1,10 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, FileText } from "lucide-react";
+import {
+  Mail,
+  Github,
+  Linkedin,
+  FileText,
+  Copy,
+  CheckCheck,
+} from "lucide-react";
+import { useState } from "react";
 import styles from "./Contact.module.scss";
 
 function Contact() {
+  const [copied, setCopied] = useState(false);
+  const email = "hussenmedhatfarouk@gmail.com";
+
   const socialLinks = [
     { icon: Github, href: "https://github.com/hussein1574/", label: "GitHub" },
     {
@@ -15,9 +26,15 @@ function Contact() {
     {
       icon: FileText,
       href: "https://drive.google.com/file/d/1WkqxssXMKJzlQKmfh86ztQNE1IjGfdDp/view?usp=sharing",
-      label: "CV",
+      label: "Resume",
     },
   ];
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <section className={styles.contact}>
@@ -29,33 +46,40 @@ function Contact() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2>Contact</h2>
+          <span className={styles.sectionLabel}>Let&apos;s Connect</span>
+          <h2>Get In Touch</h2>
+          <p className={styles.headerDescription}>
+            I&apos;m currently open to new opportunities. Whether you have a
+            question or just want to say hi, my inbox is always open.
+          </p>
         </motion.div>
 
         <motion.div
-          className={styles.contactContent}
-          initial={{ opacity: 0, y: 50 }}
+          className={styles.contactCard}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className={styles.contactText}>
-            <h3>Get In Touch</h3>
-            <p>
-              Frontend developer seeking opportunities to create intuitive,
-              accessible interfaces that make a meaningful impact on users&apos;
-              daily lives
-            </p>
-
+          <div className={styles.emailRow}>
             <motion.a
-              href="mailto:hussenmedhatfarouk@gmail.com"
+              href={`mailto:${email}`}
               className={styles.emailButton}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
             >
               <Mail size={20} />
-              <span>hussenmedhatfarouk@gmail.com</span>
+              <span>{email}</span>
             </motion.a>
+            <motion.button
+              className={styles.copyButton}
+              onClick={handleCopyEmail}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              title="Copy email"
+            >
+              {copied ? <CheckCheck size={18} /> : <Copy size={18} />}
+            </motion.button>
           </div>
         </motion.div>
 
@@ -77,29 +101,30 @@ function Contact() {
                 className={styles.socialLink}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                whileHover={{ scale: 1.2, rotate: 5 }}
+                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                whileHover={{ y: -4 }}
                 whileTap={{ scale: 0.9 }}
                 viewport={{ once: true }}
               >
-                <IconComponent size={24} />
+                <IconComponent size={20} />
+                <span>{social.label}</span>
               </motion.a>
             );
           })}
         </motion.div>
 
         <motion.div
-          className={styles.logo}
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
+          className={styles.footer}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
           <div className={styles.logoContainer}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="80"
-              height="90"
+              width="40"
+              height="48"
               viewBox="0 0 35 43"
               fill="none"
               className={styles.logoSvg}
@@ -128,8 +153,8 @@ function Contact() {
                 </linearGradient>
               </defs>
             </svg>
-            <div className={styles.logoGlow}></div>
           </div>
+          <p className={styles.copyright}>Designed & Built by Hussein Medhat</p>
         </motion.div>
       </div>
     </section>

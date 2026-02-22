@@ -10,16 +10,18 @@ const preahvihear = Preahvihear({
 
 export const metadata: Metadata = {
   title: {
-    default: "Hussen Medhat - Frontend Developer",
+    default: "Hussen Medhat - Full Stack Developer",
     template: "%s | Hussen Medhat",
   },
   description:
-    "Frontend developer specializing in React, Next.js, and modern web technologies. View my projects and get in touch for opportunities.",
+    "Full stack developer specializing in React, Next.js, TypeScript, and FastAPI. View my projects and get in touch for opportunities.",
   keywords: [
-    "frontend developer",
+    "full stack developer",
     "react",
     "nextjs",
     "typescript",
+    "fastapi",
+    "python",
     "web development",
     "portfolio",
     "hussen medhat",

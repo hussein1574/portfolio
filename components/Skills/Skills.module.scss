@@ -1,8 +1,7 @@
 .skills {
   padding: 6rem 0;
-  background: var(--background-primary-color);
   position: relative;
-
+  background: var(--background-primary-color);
   &::before {
     content: "";
     position: absolute;
@@ -12,7 +11,7 @@
     bottom: 0;
     background: radial-gradient(
       circle at 70% 30%,
-      rgba(113, 39, 186, 0.15) 0%,
+      rgba(113, 39, 186, 0.08) 0%,
       transparent 60%
     );
     z-index: 1;
@@ -20,182 +19,120 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 2rem;
   position: relative;
   z-index: 2;
 }
 
-.teamSection {
+.header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
+
+  h2 {
+    font-size: 2.75rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #fff, var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 2.25rem;
+    }
+  }
+}
+
+.sectionLabel {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .teamText {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto 3rem;
-  opacity: 0.9;
+  max-width: 550px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.65);
 
   @media (max-width: 768px) {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
-}
-
-.techStack {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.techRow {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  @media (max-width: 768px) {
-    gap: 1rem;
-  }
-}
-
-.techIcon {
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: rgba(113, 39, 186, 0.2);
-    border-color: var(--secondary-color);
-    box-shadow: 0 8px 25px rgba(113, 39, 186, 0.3);
-  }
-
-  @media (max-width: 768px) {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
 .skillsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-  margin-top: 4rem;
+  gap: 2rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 }
 
 .skillCategory {
   background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 1.75rem;
   transition: all 0.3s ease;
 
   &:hover {
-    border-color: rgba(113, 39, 186, 0.3);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-color: rgba(113, 39, 186, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   }
 
   h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
     color: var(--secondary-color);
-    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
   }
 }
 
 .skillsList {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .skillItem {
-  .skillHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.65);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  cursor: default;
+  transition: all 0.3s ease;
 
-    .skillIcon {
-      font-size: 1.2rem;
-      margin-right: 0.5rem;
-    }
-
-    .skillName {
-      flex: 1;
-      font-weight: 600;
-    }
-
-    .skillLevel {
-      font-size: 0.9rem;
-      color: var(--secondary-color);
-      font-weight: bold;
-    }
+  &:hover {
+    background: rgba(113, 39, 186, 0.15);
+    border-color: rgba(113, 39, 186, 0.35);
+    color: var(--primary-color);
   }
 }
 
-.skillBar {
-  width: 100%;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
+.skillIcon {
+  display: flex;
+  align-items: center;
 }
 
-.skillProgress {
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    var(--secondary-color),
-    rgba(113, 39, 186, 0.6)
-  );
-  border-radius: 4px;
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent
-    );
-    animation: shimmer 2s infinite;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+.skillName {
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }

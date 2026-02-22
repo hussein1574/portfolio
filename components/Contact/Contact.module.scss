@@ -1,16 +1,12 @@
 .contact {
-  padding: 6rem 0 4rem;
-  background: linear-gradient(
-    180deg,
-    var(--background-primary-color) 0%,
-    rgba(113, 39, 186, 0.1) 100%
-  );
+  padding: 6rem 0 3rem;
+  background: var(--background-primary-color);
   position: relative;
   text-align: center;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -19,47 +15,51 @@
   margin-bottom: 3rem;
 
   h2 {
-    font-size: 3rem;
+    font-size: 2.75rem;
     font-weight: bold;
     background: linear-gradient(135deg, #fff, var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    margin-bottom: 1rem;
 
     @media (max-width: 768px) {
-      font-size: 2.5rem;
+      font-size: 2.25rem;
     }
   }
 }
 
-.contactContent {
-  margin-bottom: 4rem;
+.sectionLabel {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
-.contactText {
-  h3 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #fff;
+.headerDescription {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 520px;
+  margin: 0 auto;
+}
 
-    @media (max-width: 768px) {
-      font-size: 1.8rem;
-    }
-  }
+.contactCard {
+  margin-bottom: 2.5rem;
+}
 
-  p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    opacity: 0.9;
-    margin-bottom: 2.5rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+.emailRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
 
-    @media (max-width: 768px) {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 0.75rem;
   }
 }
 
@@ -67,83 +67,96 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem 2rem;
-  background: linear-gradient(
-    135deg,
-    var(--secondary-color),
-    rgba(113, 39, 186, 0.8)
-  );
+  padding: 0.9rem 1.75rem;
+  background: var(--secondary-color);
   border: none;
-  border-radius: 50px;
+  border-radius: 12px;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(113, 39, 186, 0.3);
+  box-shadow: 0 4px 20px rgba(113, 39, 186, 0.3);
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(113, 39, 186, 0.4);
-    background: linear-gradient(
-      135deg,
-      rgba(113, 39, 186, 0.9),
-      var(--secondary-color)
-    );
+    box-shadow: 0 8px 30px rgba(113, 39, 186, 0.45);
   }
 
-  &:active {
-    transform: translateY(0);
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.5rem;
   }
+}
 
-  @media (max-width: 768px) {
-    padding: 0.875rem 1.75rem;
-    font-size: 1rem;
+.copyButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(113, 39, 186, 0.2);
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
   }
 }
 
 .socialLinks {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   margin-bottom: 4rem;
 
-  @media (max-width: 768px) {
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+  @media (max-width: 480px) {
+    gap: 0.75rem;
   }
 }
 
 .socialLink {
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: white;
+  gap: 0.5rem;
+  padding: 0.7rem 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
   transition: all 0.3s ease;
 
   &:hover {
-    background: var(--secondary-color);
-    border-color: var(--secondary-color);
-    box-shadow: 0 8px 25px rgba(113, 39, 186, 0.4);
+    background: rgba(113, 39, 186, 0.15);
+    border-color: rgba(113, 39, 186, 0.3);
+    color: #fff;
   }
 
-  @media (max-width: 768px) {
-    width: 50px;
-    height: 50px;
+  @media (max-width: 480px) {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+
+    span {
+      display: none;
+    }
   }
 }
 
-.logo {
+.footer {
   display: flex;
-  justify-content: center;
-  padding: 2rem 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .logoContainer {
@@ -152,49 +165,12 @@
 }
 
 .logoSvg {
-  width: 80px;
-  height: 90px;
-  filter: drop-shadow(0 0 20px rgba(113, 39, 186, 0.5));
-  animation: logoFloat 6s ease-in-out infinite;
-
-  @media (max-width: 768px) {
-    width: 60px;
-    height: 70px;
-  }
+  filter: drop-shadow(0 0 12px rgba(113, 39, 186, 0.35));
+  opacity: 0.7;
 }
 
-.logoGlow {
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -20px;
-  bottom: -20px;
-  background: radial-gradient(
-    circle,
-    rgba(113, 39, 186, 0.3) 0%,
-    transparent 70%
-  );
-  border-radius: 50%;
-  animation: logoGlow 4s ease-in-out infinite alternate;
-}
-
-@keyframes logoFloat {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes logoGlow {
-  0% {
-    opacity: 0.3;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 0.6;
-    transform: scale(1.2);
-  }
+.copyright {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.5px;
 }

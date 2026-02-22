@@ -20,8 +20,9 @@ function Projects() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
+          <span className={styles.sectionLabel}>Portfolio</span>
           <h2>Featured Projects</h2>
-          <p>Some things I&apos;ve built</p>
+          <p>A selection of my most impactful work</p>
         </motion.div>
 
         <div className={styles.projectsList}>
@@ -137,6 +138,19 @@ function Projects() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          className={styles.viewAll}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <Link href="/projects" className={styles.viewAllButton}>
+            View All Projects
+            <ExternalLink size={16} />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
