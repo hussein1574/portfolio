@@ -77,7 +77,7 @@ function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <motion.a
-                href="https://drive.google.com/file/d/11i0hKKiUyBIr9elbBP2XRmGq9f6qpLKj/view?usp=sharing"
+                href="https://drive.google.com/file/d/10J0p2RFJkz1_E1yl0Glx7-F13LfqDVJj/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.primaryCta}

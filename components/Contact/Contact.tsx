@@ -25,7 +25,7 @@ function Contact() {
     },
     {
       icon: FileText,
-      href: "https://drive.google.com/file/d/11i0hKKiUyBIr9elbBP2XRmGq9f6qpLKj/view?usp=sharing",
+      href: "https://drive.google.com/file/d/10J0p2RFJkz1_E1yl0Glx7-F13LfqDVJj/view?usp=drive_link",
       label: "Resume",
     },
   ];
